@@ -1,93 +1,278 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Portfolio - Dark Theme</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind and set up Dark Theme Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        // Custom Dark Theme Palette
+                        'primary': '#f1f5f9',     // Light Text (Slate 100)
+                        'secondary': '#94a3b8',   // Muted Text (Slate 400)
+                        'accent': '#60a5fa',      // Bright Blue Accent (Blue 400)
+                        'background': '#0f172a',  // Deep Dark Background (Slate 900)
+                        'surface': '#1e293b',     // Card/Section Background (Slate 800)
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles for smooth scrolling and clean look */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .section-padding {
+            padding: 4rem 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .section-padding {
+                padding: 6rem 2rem;
+            }
+        }
+    </style>
 </head>
 
-<body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+<body class="bg-background font-sans text-primary">
+
+    <!-- Navigation Bar (Sticky Header) -->
+    <header class="sticky top-0 z-50 bg-surface shadow-2xl shadow-black/50">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold text-primary hover:text-accent transition duration-300">André Dias</a>
+            <div class="space-x-4 md:space-x-8 hidden sm:flex">
+                <a href="#about" class="text-secondary hover:text-accent transition duration-300 font-medium">About</a>
+                <a href="#projects"
+                    class="text-secondary hover:text-accent transition duration-300 font-medium">Projects</a>
+                <a href="#contact"
+                    class="text-secondary hover:text-accent transition duration-300 font-medium">Contact</a>
+            </div>
+            <!-- Simple Mobile Menu Placeholder -->
+            <button class="sm:hidden text-primary hover:text-accent p-2 rounded-lg transition duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
+        </nav>
+    </header>
+
+    <main class="max-w-7xl mx-auto">
+
+        <!-- Hero Section -->
+        <section id="hero"
+            class="section-padding text-center bg-surface shadow-2xl shadow-black/50 rounded-xl mt-4 mx-4 md:mx-0">
+            <div class="flex flex-col items-center">
+                <!-- Placeholder for Profile Picture -->
+                <div
+                    class="w-32 h-32 bg-gray-600 rounded-full mb-6 flex items-center justify-center overflow-hidden border-4 border-accent shadow-xl">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-white" viewBox="0 0 20 20"
+                        fill="currentColor">
+                        <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <h1 class="text-5xl font-extrabold mb-3 text-primary tracking-tight">Back- End Student</h1>
+                <p class="text-xl text-secondary max-w-2xl mb-8">
+                    I build accessible, high-performance web applications and design intuitive user experiences.
+                    Currently focusing on large-scale data visualization.
+                </p>
+                <div class="space-x-4">
+                    <a href="#projects"
+                        class="inline-block px-8 py-3 bg-accent text-white font-semibold rounded-lg shadow-md hover:bg-blue-500 transition duration-300 transform hover:scale-105">View
+                        Work</a>
+                    <a href="#contact"
+                        class="inline-block px-8 py-3 bg-surface/50 text-primary font-semibold rounded-lg border border-secondary/50 hover:bg-surface/70 transition duration-300">Get
+                        In Touch</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section-padding">
+            <div class="bg-surface p-8 rounded-xl shadow-xl">
+                <h2 class="text-3xl font-bold mb-6 border-b-2 border-accent pb-2 text-primary">About Me</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="md:col-span-2 text-secondary space-y-4 text-lg">
+                        <p>
+                            With five years of experience in full-stack development, my core strength is translating
+                            complex requirements into elegant, maintainable code. I specialize in React, Node.js, and
+                            cloud architectures (AWS/GCP). My approach is always rooted in performance and user empathy.
+                        </p>
+                        <p>
+                            Beyond coding, I'm passionate about technical leadership and mentoring junior developers. I
+                            believe in continuous learning—the moment you stop challenging your tooling or assumptions
+                            is the moment you become irrelevant.
+                        </p>
+                    </div>
+                    <!-- Skills/Tech Stack List -->
+                    <div class="md:col-span-1">
+                        <h3 class="text-xl font-semibold mb-3 text-primary">Core Stack</h3>
+                        <ul class="flex flex-wrap gap-2">
+                            <li class="px-3 py-1 bg-accent/20 text-accent text-sm font-medium rounded-full">
+                                React/Next.js</li>
+                            <li class="px-3 py-1 bg-accent/20 text-accent text-sm font-medium rounded-full">TypeScript
                             </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li class="px-3 py-1 bg-accent/20 text-accent text-sm font-medium rounded-full">
+                                Node.js/Express</li>
+                            <li class="px-3 py-1 bg-accent/20 text-accent text-sm font-medium rounded-full">PostgreSQL
+                            </li>
+                            <li class="px-3 py-1 bg-accent/20 text-accent text-sm font-medium rounded-full">Tailwind CSS
+                            </li>
+                            <li class="px-3 py-1 bg-accent/20 text-accent text-sm font-medium rounded-full">CI/CD &
+                                DevOps</li>
                         </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                    </li>
-                </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section-padding bg-background">
+            <h2 class="text-3xl font-bold mb-10 text-center text-primary">Featured Projects</h2>
+
+            <!-- Projects Grid (Fully responsive) -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Project Card 1 -->
+                <div
+                    class="bg-surface rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-500 transform hover:-translate-y-1">
+                    <!-- Placeholder Image/Icon -->
+                    <div class="h-48 bg-background/50 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-secondary" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-primary">Real-Time Analytics Dashboard</h3>
+                        <p class="text-secondary mb-4 text-sm">A full-stack application for visualizing streaming IoT
+                            data with latency under 100ms.</p>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-accent hover:underline font-semibold text-sm">Live Demo &rarr;</a>
+                            <span
+                                class="px-2 py-0.5 bg-primary/5 text-secondary text-xs font-medium rounded-full">Node.js,
+                                D3.js</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div
+                    class="bg-surface rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-500 transform hover:-translate-y-1">
+                    <!-- Placeholder Image/Icon -->
+                    <div class="h-48 bg-background/50 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-secondary" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-primary">E-commerce API Gateway</h3>
+                        <p class="text-secondary mb-4 text-sm">Designed and deployed a microservice architecture
+                            handling over 50k requests per minute.</p>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-accent hover:underline font-semibold text-sm">GitHub Repo &rarr;</a>
+                            <span class="px-2 py-0.5 bg-primary/5 text-secondary text-xs font-medium rounded-full">Go,
+                                Docker, AWS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div
+                    class="bg-surface rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-500 transform hover:-translate-y-1">
+                    <!-- Placeholder Image/Icon -->
+                    <div class="h-48 bg-background/50 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-secondary" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9.75 17L9 20l-1 1h8l-1-1-1.75-3M3 10h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-primary">Custom CMS Toolkit</h3>
+                        <p class="text-secondary mb-4 text-sm">Built a Headless CMS framework enabling content writers
+                            to publish easily via a custom GUI.</p>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-accent hover:underline font-semibold text-sm">View Case Study
+                                &rarr;</a>
+                            <span
+                                class="px-2 py-0.5 bg-primary/5 text-secondary text-xs font-medium rounded-full">Vue.js,
+                                GraphQL</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section-padding">
+            <div class="bg-surface p-8 rounded-xl shadow-xl max-w-2xl mx-auto">
+                <h2 class="text-3xl font-bold mb-6 text-center text-primary">Get in Touch</h2>
+                <p class="text-center text-secondary mb-8">
+
+                <form class="space-y-4">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-primary mb-1">Name</label>
+                        <!-- Updated input styling for dark mode -->
+                        <input type="text" id="name" name="name"
+                            class="w-full px-4 py-2 border border-secondary/30 bg-background text-primary rounded-lg focus:ring-accent focus:border-accent transition duration-300"
+                            placeholder="Your Name" required>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-primary mb-1">Email</label>
+                        <input type="email" id="email" name="email"
+                            class="w-full px-4 py-2 border border-secondary/30 bg-background text-primary rounded-lg focus:ring-accent focus:border-accent transition duration-300"
+                            placeholder="your@email.com" required>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-primary mb-1">Message (Be concise and
+                            specific)</label>
+                        <textarea id="message" name="message" rows="5"
+                            class="w-full px-4 py-2 border border-secondary/30 bg-background text-primary rounded-lg focus:ring-accent focus:border-accent transition duration-300"
+                            placeholder="Briefly describe the opportunity or challenge." required></textarea>
+                    </div>
+                    <div class="text-center pt-4">
+                        <!-- Changed button to use accent color for prominence -->
+                        <button type="submit"
+                            class="w-full sm:w-auto px-10 py-3 bg-accent text-surface font-semibold rounded-lg shadow-lg hover:bg-blue-500 transition duration-300 transform hover:scale-[1.02]">
+                            Send Message
+                        </button>
+                    </div>
                 </form>
             </div>
-        </div>
-    </nav>
+        </section>
 
-    <div id="carouselExample" class="carousel-slide">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="/images/arcoiris.jpg" class="" alt="Um arcoiris e um lago">
-            </div>
-            <div class="carousel-item">
-                <img src="images/caminho.jpg" class="" alt="Um caminho pela floresta">
-            </div>
-            <div class="carousel-item">
-                <img src="/images/por_do_sol.jpg" class="" alt="O por do sol em um lago">
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-surface text-secondary py-8 mt-12 shadow-inner shadow-black/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">
+            <p>&copy; 2025 André Dias. All Rights Reserved. | <span class="text-accent">Built with ruthless
+                    efficiency.</span></p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="hover:text-accent transition duration-300">GitHub</a>
+                <a href="#" class="hover:text-accent transition duration-300">LinkedIn</a>
+                <a href="#" class="hover:text-accent transition duration-300">Twitter</a>
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
+    </footer>
 
-    <div class="card" style="width: 18rem;">
-        <img src="/images/campo.jpg" class="card-img-top" alt="Campo com por do sol">
-        <div class="card-body">
-            <h5 class="card-title">Field</h5>
-            <p class="card-text">A field with a sunset in the background.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-    </div>
-
-    <h1 class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">Hello, world!</h1>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
 </body>
 
 </html>
