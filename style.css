@@ -1,0 +1,118 @@
+/* Custom styles for a clean, dark aesthetic */
+:root {
+    --bs-body-bg: #1a1a1a;
+    /* Dark background */
+    --bs-body-color: #e0e0e0;
+    /* Light text */
+    --bs-primary: #8aa9ff;
+    /* Soft Blue/Purple Primary */
+    --bs-secondary: #5a5a5a;
+}
+
+body {
+    background-color: var(--bs-body-bg);
+    color: var(--bs-body-color);
+    scroll-behavior: smooth;
+}
+
+/* Navbar & Nav Links */
+.navbar {
+    background-color: rgba(26, 26, 26, 0.95) !important;
+    border-bottom: 1px solid #333333;
+}
+
+.nav-link:hover {
+    color: var(--bs-primary) !important;
+}
+
+/* Hero section styling */
+.hero-section {
+    padding-top: 150px;
+    padding-bottom: 150px;
+    background-color: #0d0d0d;
+    /* Near black for hero */
+    border-bottom: 1px solid #333333;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+.hero-subtitle {
+    color: var(--bs-primary);
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+/* Section containers */
+section {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    font-weight: 600;
+    color: var(--bs-primary);
+}
+
+/* About & Skills Section background differentiation */
+#skills {
+    background-color: #242424;
+    /* Slightly darker than body for contrast */
+}
+
+#connect {
+    background-color: #0d0d0d;
+    /* Same as hero, for emphasis */
+}
+
+/* Card and button styling */
+.card {
+    background-color: #2d2d2d;
+    /* Medium Dark */
+    border: 1px solid #444444;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 0.5rem;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.btn-primary {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+    color: #121212;
+    /* Dark text for bright button */
+    font-weight: 600;
+}
+
+.btn-primary:hover {
+    background-color: #6c8de8;
+    border-color: #6c8de8;
+}
+
+/* Skill badges */
+.skill-badge {
+    background-color: #3c3c3c;
+    color: var(--bs-body-color);
+    border: 1px solid #5a5a5a;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
+    display: inline-block;
+    border-radius: 0.75rem;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.skill-badge:hover {
+    background-color: #4c4c4c;
+}
+
+.social-links a:hover {
+    color: var(--bs-primary) !important;
+    transition: color 0.3s;
+}

@@ -4,275 +4,222 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Portfolio - Dark Theme</title>
-    <!-- Load Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Configure Tailwind and set up Dark Theme Colors -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        // Custom Dark Theme Palette
-                        'primary': '#f1f5f9',     // Light Text (Slate 100)
-                        'secondary': '#94a3b8',   // Muted Text (Slate 400)
-                        'accent': '#60a5fa',      // Bright Blue Accent (Blue 400)
-                        'background': '#0f172a',  // Deep Dark Background (Slate 900)
-                        'surface': '#1e293b',     // Card/Section Background (Slate 800)
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        /* Custom styles for smooth scrolling and clean look */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        .section-padding {
-            padding: 4rem 1rem;
-        }
-
-        @media (min-width: 640px) {
-            .section-padding {
-                padding: 6rem 2rem;
-            }
-        }
-    </style>
+    <title>Portfolio - Andre</title>
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJdijf6zJ8/Qh6gXWpSAw7Vv9J/31h5l6T0r6Q0B0t/Q/gA5h+2d/eG0v6Gg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body class="bg-background font-sans text-primary">
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="70">
 
-    <!-- Navigation Bar (Sticky Header) -->
-    <header class="sticky top-0 z-50 bg-surface shadow-2xl shadow-black/50">
-        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold text-primary hover:text-accent transition duration-300">André Dias</a>
-            <div class="space-x-4 md:space-x-8 hidden sm:flex">
-                <a href="#about" class="text-secondary hover:text-accent transition duration-300 font-medium">About</a>
-                <a href="#projects"
-                    class="text-secondary hover:text-accent transition duration-300 font-medium">Projects</a>
-                <a href="#contact"
-                    class="text-secondary hover:text-accent transition duration-300 font-medium">Contact</a>
-            </div>
-            <!-- Simple Mobile Menu Placeholder -->
-            <button class="sm:hidden text-primary hover:text-accent p-2 rounded-lg transition duration-300">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                </svg>
+    <!-- Navigation Bar -->
+    <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand text-uppercase fw-bold" href="#hero">
+                <i class="fas fa-code me-2"></i> ANDRÉ DIAS
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
-        </nav>
-    </header>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#connect">Connect</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-    <main class="max-w-7xl mx-auto">
-
-        <!-- Hero Section -->
-        <section id="hero"
-            class="section-padding text-center bg-surface shadow-2xl shadow-black/50 rounded-xl mt-4 mx-4 md:mx-0">
-            <div class="flex flex-col items-center">
-                <!-- Placeholder for Profile Picture -->
-                <div
-                    class="w-32 h-32 bg-gray-600 rounded-full mb-6 flex items-center justify-center overflow-hidden border-4 border-accent shadow-xl">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-white" viewBox="0 0 20 20"
-                        fill="currentColor">
-                        <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                            clip-rule="evenodd" />
-                    </svg>
-                </div>
-                <h1 class="text-5xl font-extrabold mb-3 text-primary tracking-tight">Back- End Student</h1>
-                <p class="text-xl text-secondary max-w-2xl mb-8">
-                    I build accessible, high-performance web applications and design intuitive user experiences.
-                    Currently focusing on large-scale data visualization.
-                </p>
-                <div class="space-x-4">
-                    <a href="#projects"
-                        class="inline-block px-8 py-3 bg-accent text-white font-semibold rounded-lg shadow-md hover:bg-blue-500 transition duration-300 transform hover:scale-105">View
-                        Work</a>
-                    <a href="#contact"
-                        class="inline-block px-8 py-3 bg-surface/50 text-primary font-semibold rounded-lg border border-secondary/50 hover:bg-surface/70 transition duration-300">Get
-                        In Touch</a>
+    <!-- 1. Hero Section -->
+    <section id="hero" class="hero-section text-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <h1 class="hero-title mb-3">
+                        AD
+                    </h1>
+                    <p class="hero-subtitle mb-4">
+                        Front and Back-end Student
+                    </p>
+                    <p class="lead text-white mb-5">
+                        Whit focus on Object-Oriented Programming Java, i am learning how to build projects.
+                    </p>
+                    <a class="btn btn-primary btn-lg shadow-sm px-5" href="#projects">View Projects</a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- About Section -->
-        <section id="about" class="section-padding">
-            <div class="bg-surface p-8 rounded-xl shadow-xl">
-                <h2 class="text-3xl font-bold mb-6 border-b-2 border-accent pb-2 text-primary">About Me</h2>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="md:col-span-2 text-secondary space-y-4 text-lg">
-                        <p>
-                            With five years of experience in full-stack development, my core strength is translating
-                            complex requirements into elegant, maintainable code. I specialize in React, Node.js, and
-                            cloud architectures (AWS/GCP). My approach is always rooted in performance and user empathy.
-                        </p>
-                        <p>
-                            Beyond coding, I'm passionate about technical leadership and mentoring junior developers. I
-                            believe in continuous learning—the moment you stop challenging your tooling or assumptions
-                            is the moment you become irrelevant.
-                        </p>
-                    </div>
-                    <!-- Skills/Tech Stack List -->
-                    <div class="md:col-span-1">
-                        <h3 class="text-xl font-semibold mb-3 text-primary">Core Stack</h3>
-                        <ul class="flex flex-wrap gap-2">
-                            <li class="px-3 py-1 bg-accent/20 text-accent text-sm font-medium rounded-full">
-                                React/Next.js</li>
-                            <li class="px-3 py-1 bg-accent/20 text-accent text-sm font-medium rounded-full">TypeScript
-                            </li>
-                            <li class="px-3 py-1 bg-accent/20 text-accent text-sm font-medium rounded-full">
-                                Node.js/Express</li>
-                            <li class="px-3 py-1 bg-accent/20 text-accent text-sm font-medium rounded-full">PostgreSQL
-                            </li>
-                            <li class="px-3 py-1 bg-accent/20 text-accent text-sm font-medium rounded-full">Tailwind CSS
-                            </li>
-                            <li class="px-3 py-1 bg-accent/20 text-accent text-sm font-medium rounded-full">CI/CD &
-                                DevOps</li>
-                        </ul>
-                    </div>
+    <!-- 2. About Me Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title text-center">About Me</h2>
+            <div class="row align-items-center">
+                <div class="col-lg-4 text-center mb-4 mb-lg-0">
+                    <!-- Placeholder image/icon -->
+                    <i class="fas fa-laptop-code fa-8x text-secondary rounded-circle p-4"
+                        style="background-color: #2d2d2d;"></i>
+                </div>
+                <div class="col-lg-8">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, incidunt repudiandae
+                    laudantium atque fuga laborum. Sunt molestias, repellat cum pariatur tempore quos veniam beatae
+                    praesentium nesciunt tenetur hic quibusdam eum!
+                    Veritatis rem labore quos quas asperiores fuga nam dolor amet voluptates, atque cum nihil dolorem,
+                    omnis tenetur voluptatibus! Quod possimus repellat omnis sed quae animi voluptatem? Deleniti magnam
+                    eligendi vel.
+                    <p class="lead mb-4">
+                    </p>
+                    <p>
+
+                    </p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="section-padding bg-background">
-            <h2 class="text-3xl font-bold mb-10 text-center text-primary">Featured Projects</h2>
+    <!-- 3. Skills Section -->
+    <section id="skills" style="background-color: #242424;">
+        <div class="container">
+            <h2 class="section-title text-center">Technical Toolkit</h2>
+            <div class="text-center">
+                <h3 class="h4 mb-3 text-white">Core Languages & Frameworks</h3>
+                <span class="skill-badge"><i class="fab fa-java me-2"></i> Java</span>
+                <span class="skill-badge"><i class="fab fa-html5 me-2"></i> HTML 5</span>
+                <span class="skill-badge"><i class="fab fa-css3 me-2"></i> CSS 3</span>
+                <span class="skill-badge"><i class="fab fa-js-square me-2"></i> TypeScript / JavaScript</span>
+                <span class="skill-badge"><i class="fab fa-bootstrap me-2"></i> Bootstrap 5</span>
 
-            <!-- Projects Grid (Fully responsive) -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <h3 class="h4 mt-5 mb-3 text-white">Databases & DevOps</h3>
+                <span class="skill-badge"><i class="fas fa-database me-2"></i> PostgreSQL / MongoDB</span>
+                <span class="skill-badge"><i class="fab fa-docker me-2"></i> Docker / Kubernetes</span>
+                <span class="skill-badge"><i class="fab fa-aws me-2"></i> AWS (EC2, S3)</span>
+                <span class="skill-badge"><i class="fab fa-git-alt me-2"></i> Git / GitHub</span>
 
-                <!-- Project Card 1 -->
-                <div
-                    class="bg-surface rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-500 transform hover:-translate-y-1">
-                    <!-- Placeholder Image/Icon -->
-                    <div class="h-48 bg-background/50 flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-secondary" fill="none"
-                            viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                        </svg>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-primary">Real-Time Analytics Dashboard</h3>
-                        <p class="text-secondary mb-4 text-sm">A full-stack application for visualizing streaming IoT
-                            data with latency under 100ms.</p>
-                        <div class="flex justify-between items-center">
-                            <a href="#" class="text-accent hover:underline font-semibold text-sm">Live Demo &rarr;</a>
-                            <span
-                                class="px-2 py-0.5 bg-primary/5 text-secondary text-xs font-medium rounded-full">Node.js,
-                                D3.js</span>
+                <h3 class="h4 mt-5 mb-3 text-white">Methodology</h3>
+                <span class="skill-badge"><i class="fas fa-project-diagram me-2"></i> Agile / Scrum</span>
+                <span class="skill-badge"><i class="fas fa-flask me-2"></i> Testing (TDD)</span>
+                <span class="skill-badge"><i class="fas fa-code-branch me-2"></i> Architecture Design</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title text-center">Key Projects</h2>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+                <!-- Project Card 1: E-commerce Platform Optimization -->
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <img src="/images/api-image.webp"
+                            class="card-img-top" alt="Placeholder for E-commerce Project">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">E-commerce API Optimization</h5>
+                            <p class="card-text">Simple API using JPA and Spring Boot  </p>
+                            <span class="badge bg-secondary me-2">Node.js</span>
+                            <span class="badge bg-secondary">Performance</span>
+                        </div>
+                        <div class="card-footer border-top-0" style="background-color: #2d2d2d;">
+                            <a target="blank" href="https://github.com/andrezon04/apiUserProduct" class="btn btn-primary btn-sm">Details <i
+                                    class="fas fa-arrow-right ms-2"></i></a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project Card 2 -->
-                <div
-                    class="bg-surface rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-500 transform hover:-translate-y-1">
-                    <!-- Placeholder Image/Icon -->
-                    <div class="h-48 bg-background/50 flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-secondary" fill="none"
-                            viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-primary">E-commerce API Gateway</h3>
-                        <p class="text-secondary mb-4 text-sm">Designed and deployed a microservice architecture
-                            handling over 50k requests per minute.</p>
-                        <div class="flex justify-between items-center">
-                            <a href="#" class="text-accent hover:underline font-semibold text-sm">GitHub Repo &rarr;</a>
-                            <span class="px-2 py-0.5 bg-primary/5 text-secondary text-xs font-medium rounded-full">Go,
-                                Docker, AWS</span>
+                <!-- Project Card 2: Real-time Analytics Dashboard -->
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://placehold.co/600x400/3c3c3c/e0e0e0?text=Project+2+Preview"
+                            class="card-img-top" alt="Placeholder for Analytics Dashboard">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">Real-time Analytics</h5>
+                            <p class="card-text">Built a data pipeline using AWS Lambda to process over 1 million daily
+                                data points, giving leadership access to insights within 5 seconds.</p>
+                            <span class="badge bg-secondary me-2">React</span>
+                            <span class="badge bg-secondary">AWS Lambda</span>
+                        </div>
+                        <div class="card-footer border-top-0" style="background-color: #2d2d2d;">
+                            <a href="#" class="btn btn-primary btn-sm">Live Demo <i
+                                    class="fas fa-arrow-right ms-2"></i></a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project Card 3 -->
-                <div
-                    class="bg-surface rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-500 transform hover:-translate-y-1">
-                    <!-- Placeholder Image/Icon -->
-                    <div class="h-48 bg-background/50 flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-secondary" fill="none"
-                            viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M9.75 17L9 20l-1 1h8l-1-1-1.75-3M3 10h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-primary">Custom CMS Toolkit</h3>
-                        <p class="text-secondary mb-4 text-sm">Built a Headless CMS framework enabling content writers
-                            to publish easily via a custom GUI.</p>
-                        <div class="flex justify-between items-center">
-                            <a href="#" class="text-accent hover:underline font-semibold text-sm">View Case Study
-                                &rarr;</a>
-                            <span
-                                class="px-2 py-0.5 bg-primary/5 text-secondary text-xs font-medium rounded-full">Vue.js,
-                                GraphQL</span>
+                <!-- Project Card 3: Automated Compliance System -->
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://placehold.co/600x400/3c3c3c/e0e0e0?text=Project+3+Preview"
+                            class="card-img-top" alt="Placeholder for Security Project">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">Compliance Automation</h5>
+                            <p class="card-text">Created a Python microservice for compliance checks, reducing the
+                                necessary manual audit time from 8 hours per week to less than 1 hour.</p>
+                            <span class="badge bg-secondary me-2">Python</span>
+                            <span class="badge bg-secondary">Security</span>
+                        </div>
+                        <div class="card-footer border-top-0" style="background-color: #2d2d2d;">
+                            <a href="#" class="btn btn-primary btn-sm">Source Code <i
+                                    class="fas fa-arrow-right ms-2"></i></a>
                         </div>
                     </div>
                 </div>
-
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="section-padding">
-            <div class="bg-surface p-8 rounded-xl shadow-xl max-w-2xl mx-auto">
-                <h2 class="text-3xl font-bold mb-6 text-center text-primary">Get in Touch</h2>
-                <p class="text-center text-secondary mb-8">
-
-                <form class="space-y-4">
-                    <div>
-                        <label for="name" class="block text-sm font-medium text-primary mb-1">Name</label>
-                        <!-- Updated input styling for dark mode -->
-                        <input type="text" id="name" name="name"
-                            class="w-full px-4 py-2 border border-secondary/30 bg-background text-primary rounded-lg focus:ring-accent focus:border-accent transition duration-300"
-                            placeholder="Your Name" required>
-                    </div>
-                    <div>
-                        <label for="email" class="block text-sm font-medium text-primary mb-1">Email</label>
-                        <input type="email" id="email" name="email"
-                            class="w-full px-4 py-2 border border-secondary/30 bg-background text-primary rounded-lg focus:ring-accent focus:border-accent transition duration-300"
-                            placeholder="your@email.com" required>
-                    </div>
-                    <div>
-                        <label for="message" class="block text-sm font-medium text-primary mb-1">Message (Be concise and
-                            specific)</label>
-                        <textarea id="message" name="message" rows="5"
-                            class="w-full px-4 py-2 border border-secondary/30 bg-background text-primary rounded-lg focus:ring-accent focus:border-accent transition duration-300"
-                            placeholder="Briefly describe the opportunity or challenge." required></textarea>
-                    </div>
-                    <div class="text-center pt-4">
-                        <!-- Changed button to use accent color for prominence -->
-                        <button type="submit"
-                            class="w-full sm:w-auto px-10 py-3 bg-accent text-surface font-semibold rounded-lg shadow-lg hover:bg-blue-500 transition duration-300 transform hover:scale-[1.02]">
-                            Send Message
-                        </button>
-                    </div>
-                </form>
+    <!-- 5. Connect Section (Minimalist Contact) -->
+    <section id="connect" class="text-center" style="background-color: #0d0d0d;">
+        <div class="container">
+            <h2 class="section-title text-center">Connect</h2>
+            <p class="lead mb-4 text-white">
+                Your portfolio is a tool for action. Don't let visitors leave without a path to reach you.
+            </p>
+            <div class="social-links d-flex justify-content-center">
+                <a href="mailto:your.email@example.com" class="text-white mx-4 fs-1" title="Email"><i
+                        class="fas fa-envelope"></i></a>
+                <a href="https://linkedin.com/in/yourprofile" target="_blank" class="text-white mx-4 fs-1"
+                    title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/yourprofile" target="_blank" class="text-white mx-4 fs-1" title="GitHub"><i
+                        class="fab fa-github"></i></a>
             </div>
-        </section>
-
-    </main>
+            <p class="mt-4 text-white small">your.email@example.com</p>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="bg-surface text-secondary py-8 mt-12 shadow-inner shadow-black/30">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">
-            <p>&copy; 2025 André Dias. All Rights Reserved. | <span class="text-accent">Built with ruthless
-                    efficiency.</span></p>
-            <div class="mt-4 space-x-4">
-                <a href="#" class="hover:text-accent transition duration-300">GitHub</a>
-                <a href="#" class="hover:text-accent transition duration-300">LinkedIn</a>
-                <a href="#" class="hover:text-accent transition duration-300">Twitter</a>
-            </div>
+    <footer class="text-center py-3" style="background-color: #2d2d2d; border-top: 1px solid #444;">
+        <div class="container">
+            <p class="mb-0 text-muted small">&copy; <span id="currentYear"></span> Jane Doe. All Rights Reserved. Built
+                with Bootstrap 5.</p>
         </div>
     </footer>
 
+    <!-- Bootstrap JS Bundle CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <script>
+        // Update current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
 </body>
 
 </html>
